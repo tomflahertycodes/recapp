@@ -1,0 +1,15 @@
+<%= form_for(@job) do |f| %>
+  <%= f.label :role %>
+  <%= f.text_field :role %>
+  <%= f.label :location %>
+  <%= f.text_field :location%>
+  <%= f.label :contract %>
+  <%= f.text_field :contract %>
+  <%= f.label :rate %>
+  <%= f.text_field :rate%>
+  <%= f.label :sector %>
+  <%= f.text_field :sector %>
+  <%= f.label :client_id  %>
+  <%= f.text_field :client_id %>
+  <%= f.submit %>
+<% end %>
