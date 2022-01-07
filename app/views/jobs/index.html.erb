@@ -1,10 +1,10 @@
 <ul>
   <% @jobs.each do |job| %>
     <li><%= job.role %> - <%= job.location %></li>
-    <<%= if job.contract == "contract" %>
-      <p><%= @job.sector %> - <%= @job.rate %> per day </p>
-    <<%= else  %>>
-      <p><%= @job.sector %> - <%= @job.rate %> per annum </p>
-    <<%= end %>>
+    <% if job.contract == "contract" %>
+      <p><%= job.sector %> - <%= job.rate %> per day </p>
+    <% else  %>
+      <p><%= job.sector %> - <%= job.rate %> per annum </p>
+    <% end %>
   <% end %>
 </ul>

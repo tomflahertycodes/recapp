@@ -42,7 +42,7 @@ job1.save!
 job2 = Job.new(
   role: "Project Manager",
   location: "london",
-  contract: "contract",
+  contract: "permenant",
   rate: 55000 ,
   sector: "construction",
   user_id: user2.id
