@@ -6,5 +6,12 @@
     <% else  %>
       <p><%= job.sector %> - <%= job.rate %> per annum </p>
     <% end %>
+    <% if job.user_id == current_user.id %>
+    <p> <%=(link_to 'Edit', edit_job_path(job)) %></p>
+    <p><%= link_to "Delete #{job.role}",
+            job_path(job),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %><p>
+  <% end %>
   <% end %>
 </ul>

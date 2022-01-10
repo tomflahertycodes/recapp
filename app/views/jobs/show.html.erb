@@ -4,3 +4,17 @@
 <p><%= @job.rate %></p>
 <p><%= @job.sector %></p>
 <p><%= @job.user %></p>
+
+<%= link_to "Delete #{@job.role} role",
+            job_path(@job),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+
+<% if @job.user_id == current_user.id %>
+    <p> <%=(link_to 'Edit', edit_job_path(job)) %></p>
+    <p><%= link_to "Delete #{@job.role}",
+            job_path(@job),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %><p>
+  <% end %>
