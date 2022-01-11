@@ -1,17 +1,18 @@
 <ul>
   <% @jobs.each do |job| %>
-    <li><%= job.role %> - <%= job.location %></li>
+    <li><h2><%= job.role %> - <%= job.location %> </h2>
     <% if job.contract == "contract" %>
-      <p><%= job.sector %> - <%= job.rate %> per day </p>
+      <h4><%= job.sector.capitalize %> - £<%= job.rate %> Per Shift </h4>
     <% else  %>
-      <p><%= job.sector %> - <%= job.rate %> per annum </p>
+      <h4><%= job.sector.capitalize %> - £<%= job.rate %> Per Annum </h4>
     <% end %>
+    <p> If interested please contact <%= job.user.name %> </p>
     <% if job.user_id == current_user.id %>
-    <p> <%=(link_to 'Edit', edit_job_path(job)) %></p>
-    <p><%= link_to "Delete #{job.role}",
+    <p> <%=(link_to 'Edit', edit_job_path(job)) %>
+    <%= link_to "Delete",
             job_path(job),
             method: :delete,
-            data: { confirm: "Are you sure?" } %><p>
+            data: { confirm: "Are you sure?" } %></p></li>
   <% end %>
   <% end %>
 </ul>
