@@ -9,7 +9,7 @@
     <p> If interested please contact <%= job.user.name %> </p>
     <% if job.user_id == current_user.id %>
     <p> <%=(link_to 'Edit', edit_job_path(job)) %>
-    <%= link_to "Delete",
+    <%= link_to " Delete",
             job_path(job),
             method: :delete,
             data: { confirm: "Are you sure?" } %></p></li>
