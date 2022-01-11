@@ -1,12 +1,95 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar{
+  position: sticky!important;
+  background-color: rgba(214, 197, 90, 0)!important;
+  color:rgb(214, 197, 90)
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+// .navbar{
+//   justify-content: space-between;
+//   transition: ease 0.3s;
+//   height: 50px;
+//   padding-bottom: 40px!important;
+//   backdrop-filter: blur(8px)!important;
+//   z-index: 2;
+//   margin-bottom: 10px;
+//   background-color: rgba(235, 232, 89, 0.916);
+// }
+
+// // #logo-img{
+// //   margin-top: 70px;
+// //   margin-bottom: 30px;
+// // }
+
+//   .navbar-collapse {
+//   position: fixed;
+//   top: 0px;
+//   left: 0;
+//   padding: 100px 15px 15px 15px;
+//   width: 75%;
+//   height: 100%;
+//   z-index: 1;
+//   backdrop-filter: blur(8px);
+//   background-color: rgba(200, 188, 82, 0.616);
+//   }
+
+//     .navbar-collapse.collapsing {
+//         left: -75%;
+//         transition: height 0s ease;
+//     }
+
+//     .navbar-collapse.show {
+//         left: 0;
+//         transition: left 300ms ease-in-out;
+//     }
+
+//     .navbar-toggler.collapsed ~ .navbar-collapse {
+//         transition: left 500ms ease-in-out;
+//     }
+
+// .navbar-toggler {
+//   color: black !important;
+//   font-size: 20px;
+//   font-weight: bold;
+// }
+
+// .header-block {
+//     z-index: 1;
+//     padding: 24px;
+//     background-color: rgba(239, 201, 119, 0.8);
+//     border-bottom-right-radius: 20px;
+//     border-bottom-left-radius: 20px;
+//     box-shadow: 1px 1px 5px gray;
+//     background-image: url('https://designmodo.com/wp-content/uploads/2015/07/11-40-Food-Icons-PSD-by-Graphics-Bay-Team.jpg');
+//     background-blend-mode: darken;
+// }
+.logoutbtn{
+  padding: 25px !important;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+li.nav-item {
+  padding: 25px !important;
+}
+
+a {
+  color: black;
+  opacity: 1;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  // text-align: center;
+  padding-bottom: 5px;
+}
+
+a:hover {
+  color: rgb(136, 136, 136) !important;
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+.pos-f-t ul {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
 }
