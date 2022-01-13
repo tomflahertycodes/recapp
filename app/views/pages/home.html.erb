@@ -1,2 +1,14 @@
 
 <%= image_tag("london.jpeg", class: "bg-image shadow-2-strong", id:"bg", alt: "an image of a london skyline") %>
+
+
+<div class = "search" >
+  <%= form_tag jobs_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Job"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
