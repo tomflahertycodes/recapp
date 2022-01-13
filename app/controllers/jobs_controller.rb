@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-    before_action :find_job, only: [:show, :edit, :update, :destroy]
+  before_action :find_job, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
@@ -18,9 +18,9 @@ class JobsController < ApplicationController
   end
 
   def create
-  @job = Job.new(params[:job])
-  @job.save
-  redirect_to job_path(@job)
+    @job = Job.new(job_params)
+    @job.save
+    redirect_to job_path(@job)
   end
 
   def edit
@@ -46,6 +46,6 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:role, :location, :rate, :contract, :rate, :sector)
+    params.require(:job).permit(:role, :location, :rate, :contract, :sector)
   end
 end
