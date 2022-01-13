@@ -1,8 +1,13 @@
 class JobsController < ApplicationController
-    before_action :find_job, only: [:show, :edit, :update, :destroy]
+  before_action :find_job, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all
+    if params[:query].present?
+      sql_query = "role ILIKE :query OR location ILIKE :query"
+      @jobs = Job.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @jobs = Job.all
+    end
   end
 
   def show
@@ -13,9 +18,10 @@ class JobsController < ApplicationController
   end
 
   def create
-  @job = Job.new(params[:job])
-  @job.save
-  redirect_to job_path(@job)
+    @job = Job.new(job_params)
+    @job.user_id = current_user.id
+    @job.save!
+    redirect_to jobs_path(@job)
   end
 
   def edit
@@ -41,6 +47,6 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:role, :location, :rate, :contract, :rate, :sector)
+    params.require(:job).permit(:role, :location, :rate, :contract, :sector)
   end
 end
